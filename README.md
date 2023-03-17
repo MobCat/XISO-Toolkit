@@ -9,6 +9,30 @@ Xbox ISO tools for your windows context menu
 **This project is currently a proof of concept, work in progress, brute-forced with python.**  
 There are still lots to do and maybe one day I'll re-right this hole thing into a nice and small C++ app, but until then, has bloat sorry.
 
+# Features
+### Build attacher
+![Build](https://cdn.discordapp.com/attachments/1063759326340186172/1086199128800903179/image.png)<br>
+This will build an attacher default.xbe for the xiso you selected.<br>
+This is use to mount the iso to your xbox so you can play the xiso on real hardware.<br>
+Please note: The title name only supports ASCII so if you want to change it to something else 
+like, Halo 2 (JPN) so you can tell it apart from Halo 2 (MULTI) then you need to keep your names in ASCII.<br>
+Also some titles don't have ASCII names and will show up weird when trying to make an attacher,
+you can also use this tool to set the name to something not broken<br>
+![Unicode will be the death of me](https://cdn.discordapp.com/attachments/1063759326340186172/1086201047950827530/image.png)<br>
+Or just set the title name to what ever you like, it's your attacher, do what you what.<br>
+
+### Split Lardge XISO
+![Split](https://cdn.discordapp.com/attachments/1063759326340186172/1086203796725706853/image.png)<br>
+The original xbox's HDD is formatted with a unique disk format called FATX, This format shares a lot of the same limitations as FAT32.<br>
+One of those limitations is a maximum file size, in this case of 4092 MB. And there are like 20% of xbox games that are larger then this
+So to get them onto a real xbox, we need to split the xiso into chunks that are smaller then that limitation.<br>
+Then the attacher will mount the game.1.iso first, then mount the game.2.iso right after it. And the xbox is none the wiser it still looks like one big disk to it.
+Please note though, this limitation and tool is only needed for running xisos on real hardware at the current time. if your running an emulator
+you should be able to just mount the big xiso to it without any issues. Please don't split the xiso if you don't need to.<br>
+
+As this process can take a min or so, we gave you some music to listen to \\^__^/ You can even set it to whatever you like as well.<br>
+But if for some reason you're a buzzkill, you can turn the music off, check the note at the end of the how to build section.
+
 # #TODO:
 
 The "splitter" script has some things to clean up with the music player, but otherwise I'm happy with it.  
