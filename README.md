@@ -23,3 +23,19 @@ PowerISO - For extracting the default.xbe from the XISO
 xbedump - For extracting title info from the default.xbe. This is super temporary, I should be able to work on this next.  
 [Extract-xiso](https://github.com/XboxDev/extract-xiso)\- For rebuilding a Redump ISO into and XISO we can actually use.  
 PLEASE NOTE AGAIN: By defult in this toolkit, extract-xiso WILL DELETE your redump when its done with the rebuild. I have not set a "user setting" for this.
+
+# How to build (Temp)
+
+Download this repo and unpack it to C:\XISOTools
+Run the `pip install -r requirements.txt` to install all the libs (But I think I messed that up, missing libs still?)
+place `xbedump.exe` and `extract-xiso.exe` in this dir
+Make a new blank tmp folder in the XISOTools folder
+Back in the XISOTools folder, Run the `BuildAttacher.bat` and `BuildSplitter.bat`
+Run the `ContextMenu.reg` to add the XISO Toolkit options to your context menu
+If you don't want music, edit the `Music.cfg` and change the first line to anything other then `True`, You can also just delete the `Music.cfg` file if your lazy and don't want music ever but thats kinda sad.
+If you do want music, edit the `Music.cfg`, make sure the first line is exactly `True` it is case sensitive.
+Then you can make a new music folder in the XISOTools like in the defult setting and put all your .xm and .mod files in there
+Or you can change this file path to where you keep your own tracker music on your computer
+
+You can also just run the installer from the release page if you trust me. That will install the pre-built exe files you need and setup your reg aswell.
+The installer is still a little trash, but again it works for now, but needs cleanup lator.
