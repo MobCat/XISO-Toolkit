@@ -9,6 +9,8 @@ from sys import exit as exit
 import shutil
 
 # If you don't have PowerISO installed, then theres no point in running this scrupt
+# This is also stupid, we should be abale to extract it our selves at worst
+# at best, just read the xbe data from inside the xiso
 if os.path.exists('C:/Program Files/PowerISO/piso.exe') == False:
     GUI.popup_error('You do not have PowerISO Installed\nIt is needed for this shitty program to function')
     exit(1)
@@ -45,6 +47,15 @@ with open(str(fi), 'rb', buffering = 0) as fileHandle:# 'buffered=0' streams the
     input_file_size = fileHandle.seek(0,2)# sometimes the OS lies about the file size, esp Windows with compressed file sizes and such. Actually checking is usually best.
     fileHandle.close()
 
+# Check file name length. It had something to do with 42 but don't remember which.
+if len(strfi) > 42:
+    GUI.popup_error(f'\n!!!ERROR!!!\n"{strfi}"\nThe FATX file system has a max character limit of 42 for each file\nPlease remove {len(strfi)-42} chars from your original filename.\n\nPress Error to exit.')
+    exit(1)
+
+# Maybe should also check the games folder char leng too. But not sure if necessary yet.
+# Something like this if we dident chdir first.
+# if len(os.path.basename(os.getcwd())) > 42: ???
+
 
 # Pass our iso to power iso to extract the defult xbe.
 # TODO: This is trash, we should just be able to peek into the xiso, then peek inside the default.xbe
@@ -56,7 +67,8 @@ subprocess.run(f'"C:/Program Files/PowerISO/piso.exe" extract "{fi}" /default.xb
 #########################
 # Extract info from xbe #
 #########################
-# Now the xbe has been ripped, extract its cert info.
+# This is stupid. Right now we are only ripping title id and name we should "just" do the reverse of editXBE, but the byte_offsets will be difrent for each XBE though..
+# Use xbedump to rip cert as we dont have our own tool yet.
 GetHeadder = subprocess.run(f"xbedump.exe tmp/default.xbe -dc", capture_output=True, text=True).stdout.strip("\t").splitlines()
 
 # set values for Title ID and name
@@ -159,7 +171,8 @@ while True:
     # End program if user closes window or
     # presses the OK button
     if event == GUI.WIN_CLOSED: # Just close the window.
-        break
+        exit(1)
+        #break
     elif event == 'btn_ok': # if the OK button in the window is pressed.
         #print(TitleID)
         #print(values['input'])
