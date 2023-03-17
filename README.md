@@ -19,7 +19,7 @@ like, Halo 2 (JPN) so you can tell it apart from Halo 2 (MULTI) then you need to
 Also some titles don't have ASCII names and will show up weird when trying to make an attacher,
 you can also use this tool to set the name to something not broken<br>
 ![Unicode will be the death of me](https://cdn.discordapp.com/attachments/1063759326340186172/1086201047950827530/image.png)<br>
-Or just set the title name to what ever you like, it's your attacher, do what you what.<br>
+Or just set the title name to what ever you like, it's your attacher, do what you want.<br>
 
 ### Split Lardge XISO
 ![Split](https://cdn.discordapp.com/attachments/1063759326340186172/1086203796725706853/image.png)<br>
