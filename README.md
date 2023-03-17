@@ -14,6 +14,7 @@ There are still lots to do and maybe one day I'll re-right this hole thing into 
 The "splitter" script has some things to clean up with the music player, but otherwise I'm happy with it.  
 The "build" script is a total dumpster fire. It works but it needs way to many pre-requirements, mainly PowerISO which is stupid, but idk how to raw read an xiso just to pull one file.  
 And even then we don't need to pull one file, we just need to load that file to extract a few bits of info out of it. It's a mess.. Again I have no idea what I'm doing it and just brute-forcing it because nobody else is doing it in a way I like.
+Allow for the user to actually select where they want the toolkit to be installed instead of forcing C:\XISOTools\
 
 # Pre-requirements
 
